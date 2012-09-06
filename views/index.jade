@@ -1,0 +1,28 @@
+extends layout
+
+block content
+  .navbar.navbar-fixed-top
+    .navbar-inner
+      .container
+        a.btn.btn-navbar(data-toggle='collapse', data-target='.nav-collapse')
+          span.icon-bar
+          span.icon-bar
+          span.icon-bar
+        a.brand(href='/') Twitter streaming API example using Socket.IO
+        .nav-collapse
+          ul.nav
+
+  .container
+    .row
+      .span12
+        .well.well-small
+          p.time
+          form#search.form-search(action='javascript:void(0)')
+            .input-append
+              input.keyword.span2.search-query(type='text')
+              button.search.btn(type='submit') Search
+
+        .tweets
+
+  script(src='//localhost:8000/socket.io/socket.io.js')
+  != js('app')
